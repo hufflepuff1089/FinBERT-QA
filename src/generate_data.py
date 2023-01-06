@@ -15,7 +15,8 @@ from pathlib import Path
 from pyserini.search import pysearch
 
 from utils import *
-
+# adding test comment, should be removed afterwards
+alisia = "alisia"
 path = str(Path.cwd())
 
 # Lucene indexer
