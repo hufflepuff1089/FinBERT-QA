@@ -11,7 +11,7 @@ import argparse
 from pathlib import Path
 from sklearn.model_selection import train_test_split
 from pathlib import Path
-# os.environ["JAVA_HOME"] = "/usr/lib/jvm/java-11-openjdk-amd64"
+os.environ["JAVA_HOME"] = "/usr/lib/jvm/java-11-openjdk-amd64"
 from pyserini.search import pysearch
 
 from utils import *

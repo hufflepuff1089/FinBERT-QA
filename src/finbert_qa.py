@@ -121,7 +121,9 @@ class PointwiseBERT():
                 # Encode the sequence using BERT tokenizer
                 encoded_seq = self.tokenizer.encode_plus(q_text, ans_text,
                                                     max_length=self.max_seq_len,
-                                                    pad_to_max_length=True,
+                                                    #pad_to_max_length=True,
+                                                    padding='max_length',
+                                                    truncation=True,
                                                     return_token_type_ids=True,
                                                     return_attention_mask = True)
                 # Get parameters
@@ -450,13 +452,17 @@ class PairwiseBERT():
                 # Encode positive QA pair
                 pos_encoded_seq = self.tokenizer.encode_plus(q_text, pos_ans_text,
                                                     max_length=self.max_seq_len,
-                                                    pad_to_max_length=True,
+                                                    #pad_to_max_length=True,
+                                                    padding='max_length',
+                                                    truncation=True,
                                                     return_token_type_ids=True,
                                                     return_attention_mask = True)
                 # Encode negative QA pair
                 neg_encoded_seq = self.tokenizer.encode_plus(q_text, neg_ans_text,
                                                     max_length=self.max_seq_len,
-                                                    pad_to_max_length=True,
+                                                    #pad_to_max_length=True,
+                                                    padding='max_length',
+                                                    truncation=True,
                                                     return_token_type_ids=True,
                                                     return_attention_mask = True)
                 # Get parameters
@@ -820,7 +826,9 @@ class FinBERT_QA():
             # Create inputs for the model
             encoded_seq = self.tokenizer.encode_plus(q_text, ans_text,
                                                 max_length=self.max_seq_len,
-                                                pad_to_max_length=True,
+                                                #pad_to_max_length=True,
+                                                padding='max_length',
+                                                truncation=True,
                                                 return_token_type_ids=True,
                                                 return_attention_mask = True)
 
