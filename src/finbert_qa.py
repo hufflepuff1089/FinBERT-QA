@@ -29,6 +29,8 @@ labels = load_pickle(path + '/data/data_pickle/labels.pickle')
 # Lucene index
 fiqa_index = path + "/retriever/lucene-index-fiqa"
 
+
+
 class BERT_MODEL():
     """Fine-tuned BERT model for non-factoid question answering.
     """
@@ -151,6 +153,10 @@ class PointwiseBERT():
         return input_ids, token_type_ids, att_masks, labels
 
     def get_dataloader(self, dataset, type):
+        print("ali")
+        return DataLoader([], sampler=[], batch_size=self.batch_size)
+
+    def get_ddataloader(self, dataset, type):
         """Creates train and validation DataLoaders with input_ids,
         token_type_ids, att_masks, and labels
 
